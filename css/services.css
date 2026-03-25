@@ -1,0 +1,188 @@
+/* nos projet */
+.css-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 20px 5px 40px;
+  scrollbar-width: none; /* Cache la scrollbar sur Firefox */
+}
+.css-slider::-webkit-scrollbar {
+  display: none;
+} /* Cache sur Chrome */
+
+.css-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+}
+@media (min-width: 768px) {
+  .css-slide {
+    flex: 0 0 calc(50% - 10px);
+  }
+}
+@media (min-width: 1024px) {
+  .css-slide {
+    flex: 0 0 calc(33.333% - 14px);
+  }
+}
+
+/* --- CARTE & EFFET SURVOL --- */
+.project-card {
+  background: #fff;
+  border-radius: var(--border-radius-base);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  display: block;
+  text-decoration: none;
+}
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+.image-container {
+  position: relative;
+  height: 450px; /* Hauteur de la carte */
+  overflow: hidden;
+  margin: 0;
+}
+.image-container img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  transition: transform 6s linear; /* Défilement lent au survol */
+}
+.image-container:hover img {
+  transform: translateY(calc(-100% + 450px));
+}
+
+.project-title {
+  padding: 20px;
+  text-align: center;
+  font-weight: 700;
+  color: var(--title);
+  margin: 0;
+  background: #fff;
+}
+
+/* --- MODALE AVEC SCROLL VERTICAL --- */
+
+dialog {
+  border: none;
+  border-radius: 8px;
+  padding: 0;
+  width: 90%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow: visible; /* important pour que le bouton déborde */
+  position: fixed;
+  top: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+dialog img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  overflow: hidden; /* arrondi sur l'image */
+}
+
+.close-modal {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  z-index: 99999;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+.close-modal:hover {
+  background: var(--primary-hover);
+}
+/* Style spécifique pour la section Devis */
+.dz-info-box {
+  padding: 60px 50px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 6px 0 0 6px;
+}
+
+/* Motif de fond discret pour le côté bleu (comme sur l'image) */
+.dz-info-box:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.dz-info-box .title {
+  font-size: 42px;
+  line-height: 1.2;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.dz-form-area {
+  padding: 60px 50px;
+  border-radius: 0 6px 6px 0;
+}
+*/
+
+/* Ajustement des icônes dans les champs */
+.input-group-text {
+    background-color: #f8f9fa;
+    border: 1px solid #cccccc;
+    border-right: 0;
+    color: var(--primary);
+}
+
+.form-control {
+    border-left: 0;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .dz-info-box {
+    border-radius: 6px 6px 0 0;
+    padding: 40px 30px;
+  }
+  .dz-form-area {
+    border-radius: 0 0 6px 6px;
+    padding: 40px 30px;
+  }
+  .dz-info-box .title {
+    font-size: 30px;
+  }
+}
+
+.service-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
