@@ -1,0 +1,119 @@
+.why-us-card .icon-bx-wraper.active .why-us-icon {
+    color: #007BFF !important;
+}
+
+#notre-clients{
+    background: #ffffff !important;
+}
+
+.social-icons{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.social-icons i{
+    font-size: 26px;
+}
+.social-icons a{
+    height: 56px;
+    width: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    transition: all .3s ease-in-out ;
+}
+.social-icons a:hover{
+    border: 2px solid rgb(167, 167, 167);
+}
+
+.facebook{
+    color: white;
+    background: #1877F2;
+}
+.facebook:hover{
+    color: #1877F2;
+    background: white;
+}
+
+.x{
+    color: white;
+    background: #000;
+}
+.x:hover{
+    color: #000;
+    background: white;
+}
+
+.linkedin{
+    color: white;
+    background: #0077B5;
+}
+.linkedin:hover{
+    color: #0077B5;
+    background: white;
+}
+
+.instagram{
+    margin-left: 5px;
+    color: white;
+    background: linear-gradient(
+  45deg,
+  #F58529,
+  #DD2A7B,
+  #8134AF,
+  #515BD4
+);
+}
+.instagram:hover{
+    color: #E4405F;
+    background: white;
+}
+
+.tiktok{
+    color: white;
+    background: #000;
+}
+.tiktok:hover{
+    color: #000;
+    background: white;
+}
+
+.whatsapp-btn{
+    background: white;
+    border: 2px solid #64b161;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+.whatsapp-btn:hover{
+    background: #96d493;
+}
+
+.whatsapp-btn img + span{
+    margin: 25px;
+}
+
+.wts-btn{
+    color: white;
+    background: #25d366;
+}
+.wts-btn:hover{
+    color: #25d366;
+    background: white;
+}
+
+.wts-btn i{
+    margin-right: 10px;
+}
+
+.btns a{
+    margin: 10px;
+}
+
+.bgremoved-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
