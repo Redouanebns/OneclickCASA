@@ -1,274 +1,158 @@
-/* Ajustements spécifiques pour cette section */
-.about-wrapper {
-  padding-top: 100px;
-  padding-bottom: 70px;
-  background-color: #e8f1f8;
+/* nos projet */
+.css-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 20px 5px 40px;
+  scrollbar-width: none; /* Cache la scrollbar sur Firefox */
 }
+.css-slider::-webkit-scrollbar {
+  display: none;
+} /* Cache sur Chrome */
 
-.section-head.style-1 .sub-title {
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: #391aa6 !important;
+.css-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
 }
-
-.section-head.style-1 .title {
-  color: #071c35;
-  font-weight: 700;
-  margin-top: 10px;
+@media (min-width: 768px) {
+  .css-slide {
+    flex: 0 0 calc(50% - 10px);
+  }
 }
-
-.dz-separator.style-1 {
-  width: 80px;
-  height: 3px;
-  background: linear-gradient(to right, #391aa6, #06a3f5);
-  margin-bottom: 25px;
-}
-
-.dz-content p {
-  color: #555;
-  line-height: 1.7;
-  font-size: 21px;
-}
-
-/* Style du bouton pour correspondre au bleu de l'image */
-.btn-primary.btn-rounded {
-  background-color: #0b4ab3 !important;
-  border-color: #0b4ab3 !important;
-  color: #fff !important;
-  padding: 12px 30px;
-  border-radius: 5px; /* Arrondi léger comme sur l'image */
-  font-weight: 600;
-  text-transform: none;
-  transition: all 0.3s;
-}
-
-.btn-primary.btn-rounded:hover {
-  background-color: #083a8d !important;
-  transform: translateY(-2px);
-}
-
-/* Style de l'image */
-.dz-media img {
-  border-radius: 10px; /* Coins très arrondis comme sur l'image */
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 991px) {
-  .about-wrapper {
-    padding-top: 50px;
-    padding-bottom: 20px;
+@media (min-width: 1024px) {
+  .css-slide {
+    flex: 0 0 calc(33.333% - 14px);
   }
 }
 
-/* réalisation style */
-.portfolio-section {
-  padding: 80px 0;
+/* --- CARTE & EFFET SURVOL --- */
+.project-card {
+  background: #fff;
+  border-radius: var(--border-radius-base);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  display: block;
+  text-decoration: none;
+}
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+.image-container {
+  position: relative;
+  height: 450px; /* Hauteur de la carte */
+  overflow: hidden;
+  margin: 0;
+}
+.image-container img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  transition: transform 6s linear; /* Défilement lent au survol */
+}
+.image-container:hover img {
+  transform: translateY(calc(-100% + 450px));
+}
+
+.project-title {
+  padding: 20px;
+  text-align: center;
+  font-weight: 700;
+  color: var(--title);
+  margin: 0;
   background: #fff;
 }
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
 
-/* Section Head */
-.section-head {
-  margin-bottom: 50px;
-  text-align: center;
-}
-.section-head .title {
-  font-family: "Poppins";
-  font-size: 40px;
-  font-weight: 700;
-}
-.section-head .title span {
-  color: var(--primary);
-}
+/* --- MODALE AVEC SCROLL VERTICAL --- */
 
-.dz-separator.style-2 {
-  height: 10px;
-  width: 80px;
-  position: relative;
-  margin: 0 auto 20px;
-}
-.dz-separator.style-2:before,
-.dz-separator.style-2:after {
-  content: "";
-  height: 3px;
-  position: absolute;
-  background: var(--primary);
+dialog {
+  border: none;
+  border-radius: 8px;
+  padding: 0;
+  width: 90%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow: visible; /* important pour que le bouton déborde */
+  position: fixed;
+  top: 5vh;
   left: 50%;
   transform: translateX(-50%);
 }
-.dz-separator.style-2:before {
-  top: 0;
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+dialog img {
   width: 100%;
-}
-.dz-separator.style-2:after {
-  bottom: 0;
-  width: 60%;
-}
-
-/* SWIPER CUSTOMIZATION */
-.portfolio-swiper {
-  padding: 20px 10px 80px !important; /* Espace pour la pagination en bas */
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-  color: var(--primary);
-  background: #fff;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-.swiper-button-next:after,
-.swiper-button-prev:after {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.swiper-pagination-bullet-active {
-  background: var(--primary);
-}
-
-/* DZ Box Style 2 */
-.dz-box.style-2 {
-  position: relative;
-  padding-bottom: 60px;
-  transition: transform 0.3s;
-}
-
-.dzz-media {
-  position: relative;
-  overflow: hidden;
+  height: auto;
+  display: block;
   border-radius: 8px;
+  overflow: hidden; /* arrondi sur l'image */
 }
 
-.dzz-media img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  transition: 0.8s;
-}
-
-.dz-box.style-2 .sub-title {
-  writing-mode: vertical-rl;
+.close-modal {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -15px;
+  right: -15px;
+  z-index: 99999;
   background: var(--primary);
-  padding: 30px 10px;
-  z-index: 2;
-}
-.dz-box.style-2 .sub-title a {
   color: #fff;
-  text-transform: uppercase;
-  font-size: 11px;
-  letter-spacing: 1.5px;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.dz-box.style-2 .port-info {
-  position: absolute;
-  bottom: 10px;
-  right: 15px;
-  background: #fff;
-  padding: 25px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  width: 85%;
-  z-index: 3;
-}
-
-.dz-box.style-2 .port-info .title {
-  font-size: 20px;
-  margin-bottom: 10px;
-  font-family: "Poppins";
-  font-weight: 700;
-}
-.dz-box.style-2 .port-info .title a {
-  color: var(--title);
-  text-decoration: none;
-}
-
-.btn-link {
-  color: var(--primary);
-  font-weight: 700;
-  font-size: 12px;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-/* Hover Effects */
-.dz-box.style-2:hover .dzz-media img {
-  transform: scale(1.1);
-}
-.dz-box.style-2 .view-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 45px;
-  height: 45px;
-  background: var(--primary);
-  border-radius: 4px;
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  transition: 0.4s;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
 }
-.dz-box.style-2 .view-btn:after {
-  content: "\f067";
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  color: #fff;
-}
-.dz-box.style-2:hover .view-btn {
-  opacity: 1;
-}
-.dz-separator.style-2:before,
-.dz-separator.style-2:after {
-  background-color: var(--secondary);
+
+.close-modal:hover {
+  background: var(--primary-hover);
 }
 /* Style spécifique pour la section Devis */
 .dz-info-box {
-    padding: 60px 50px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    border-radius: 6px 0 0 6px;
+  padding: 60px 50px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 6px 0 0 6px;
 }
 
 /* Motif de fond discret pour le côté bleu (comme sur l'image) */
 .dz-info-box:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
-    opacity: 0.1;
-    z-index: -1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+  opacity: 0.1;
+  z-index: -1;
 }
 
 .dz-info-box .title {
-    font-size: 42px;
-    line-height: 1.2;
-    margin-bottom: 30px;
-    font-weight: 700;
+  font-size: 42px;
+  line-height: 1.2;
+  margin-bottom: 30px;
+  font-weight: 700;
 }
 
 .dz-form-area {
-    padding: 60px 50px;
-    border-radius: 0 6px 6px 0;
+  padding: 60px 50px;
+  border-radius: 0 6px 6px 0;
 }
+*/
 
 /* Ajustement des icônes dans les champs */
 .input-group-text {
@@ -284,15 +168,21 @@
 
 /* Responsive */
 @media (max-width: 991px) {
-    .dz-info-box {
-        border-radius: 6px 6px 0 0;
-        padding: 40px 30px;
-    }
-    .dz-form-area {
-        border-radius: 0 0 6px 6px;
-        padding: 40px 30px;
-    }
-    .dz-info-box .title {
-        font-size: 30px;
-    }
+  .dz-info-box {
+    border-radius: 6px 6px 0 0;
+    padding: 40px 30px;
+  }
+  .dz-form-area {
+    border-radius: 0 0 6px 6px;
+    padding: 40px 30px;
+  }
+  .dz-info-box .title {
+    font-size: 30px;
+  }
+}
+
+.service-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -48,6 +48,30 @@
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="css/style.css" />
 	<link rel="stylesheet" href="css/accueil.css"/>
+  <script>
+  function openModal(id) {
+    // Ferme toutes les modales ouvertes
+    document.querySelectorAll('.css-modal').forEach(m => m.style.display = 'none');
+    // Ouvre la bonne
+    const modal = document.getElementById(id);
+    modal.style.display = 'flex';
+    // Remet le scroll de la modale en haut
+    modal.querySelector('.modal-scroll-container').scrollTop = 0;
+    // Bloque le scroll du body
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.querySelectorAll('.css-modal').forEach(m => m.style.display = 'none');
+    // Réactive le scroll du body
+    document.body.style.overflow = '';
+  }
+
+  // Fermeture avec la touche Échap
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+  });
+</script>
   </head>
   <body id="bg">
     <div id="loading-area" class="loading-page-1">
@@ -2212,7 +2236,7 @@
       </button>
     </div>
     <!-- JAVASCRIPT FILES ========================================= -->
-    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></scrip>
     <!-- JQUERY.MIN JS -->
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- BOOTSTRAP.MIN JS -->
