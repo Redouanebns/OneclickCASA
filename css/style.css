@@ -20086,3 +20086,142 @@ footer {
   background-color: #e5588d; }
 
 /*# sourceMappingURL=style.css.map */
+
+/* ===== CUSTOM SERVICES MENU ===== */
+.services-menu {
+  position: relative;
+}
+
+.services-menu > a {
+  display: block;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.services-menu .services-mega-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0 !important;
+  right: auto !important;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  border-radius: 6px;
+  padding: 15px;
+  min-width: 500px;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px 20px;
+  z-index: 9999;
+  list-style: none;
+  margin: 0;
+}
+
+.services-menu:hover .services-mega-menu {
+  display: grid !important;
+}
+
+.services-menu .services-mega-menu li a {
+  display: block;
+  padding: 8px 12px;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.services-menu .services-mega-menu li a:hover {
+  color: var(--primary);
+  padding-left: 16px;
+}
+/* ===== END SERVICES MENU ===== */
+
+/* ===== CUSTOM OFFRES MEGA MENU ===== */
+/* .offres-menu {
+  position: relative;
+}
+
+.offres-menu .offres-mega-menu {
+  display: none;
+  position: fixed;
+  top: auto;
+  left: 20% !important;
+  right: 20% !important;
+  width: 100% !important;
+  min-width: unset;
+  background: #fff;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+  border-radius: 0;
+  padding: 25px 60px;
+  grid-template-columns: 1fr 1fr 1fr 1fr auto;
+  gap: 0 20px;
+  z-index: 9999;
+  border-top: 3px solid var(--primary);
+}
+
+.offres-menu:hover .offres-mega-menu {
+  display: grid !important;
+}
+
+.offres-mega-menu .mega-col-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 5px;
+  font-family: var(--font-family-title);
+}
+
+.offres-mega-menu .mega-col-desc {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+.offres-mega-menu .mega-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.offres-mega-menu .mega-col ul li a {
+  display: block;
+  padding: 6px 0;
+  color: #555;
+  text-decoration: none;
+  font-size: 13px;
+  border-bottom: 1px solid #f5f5f5;
+  transition: all 0.2s ease;
+}
+
+.offres-mega-menu .mega-col ul li a:hover {
+  color: var(--primary);
+  padding-left: 6px;
+}
+
+.offres-mega-menu .mega-cta {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 160px;
+}
+
+.offres-mega-menu .mega-cta p {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.offres-mega-menu .mega-cta .btn {
+  width: 100%;
+  text-align: center;
+}
+
+.offres-mega-menu .mega-col:not(.mega-cta) {
+  border-right: 1px solid #f0f0f0;
+  padding-right: 20px;
+} */
+/* ===== END OFFRES MEGA MENU ===== */
