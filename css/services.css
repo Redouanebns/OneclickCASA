@@ -194,3 +194,6 @@ dialog img {
   align-items: center;
   justify-content: center;
 }
+.seo-about img{
+  height: 90vh;
+}
